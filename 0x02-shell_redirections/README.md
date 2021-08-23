@@ -13,5 +13,5 @@ Script- tail -f /etc/passwd /etc/hosts: Displays the content of /etc/passwd and 
 4. Last lines of a file
 Script- tail -10 /etc/passwd: Displays the last 10 lines of /etc/passwd.
 
-4. Last lines of a file
+5. I'd prefer the first ones actually
 Script- head -10 /etc/passwd: Displays the first 10 lines of /etc/passwd/
