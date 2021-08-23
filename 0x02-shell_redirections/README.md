@@ -3,3 +3,6 @@ Script-  echo "Hello, World" which prints “Hello, World”, followed by a new 
 
 1. Confused smiley
 File 1-confused_smiley:  script that displays a confused smiley "(Ôo)'.
+
+2. Let's display a file
+Script- cat /etc/passwd: Displays the content of the /etc/passwd file.
