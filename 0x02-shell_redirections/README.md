@@ -17,4 +17,7 @@ Script- tail -10 /etc/passwd: Displays the last 10 lines of /etc/passwd.
 Script- head -10 /etc/passwd: Displays the first 10 lines of /etc/passwd/
 
 6. Line #2
-Script- awk 'FNR==3 {print}' iacta: Displays the third line of the file iacta..
+Script- awk 'FNR==3 {print}' iacta: Displays the third line of the file iacta
+
+7. It is a good file that cuts iron without making a noise
+Script printf "Best School\n" \*\\'"Best School"\'\\*$\?\*\*\*\*\*:): creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
