@@ -15,3 +15,6 @@ Script- tail -10 /etc/passwd: Displays the last 10 lines of /etc/passwd.
 
 5. I'd prefer the first ones actually
 Script- head -10 /etc/passwd: Displays the first 10 lines of /etc/passwd/
+
+6. Line #2
+Script- awk 'FNR==3 {print}' iacta: Displays the third line of the file iacta..
