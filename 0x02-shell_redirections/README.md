@@ -27,3 +27,9 @@ Script ls -la > ls_cwd_content: writes into the file ls_cwd_content the result o
 
 9. Duplicate last line
 Script tail -1f iacta: Duplicates the last line of the file iacta
+
+10. No more javascript
+Script rm *.js: Deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+
+11. Don't just count your directories, make your directories count
+Script ls -l | grep -c ^d: Counts the number of directories and sub-directories in the current directory.
