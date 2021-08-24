@@ -15,3 +15,9 @@ printenv : Lists environment variables.
 
 5. Local variables
 set : Lists all local variables and environment variables, and functions.
+
+6. Local variable
+BETTY="Holberton" : Creates a script that creates a new local variable, of the name BETTY and value of Holberton
+
+7. Global variable
+HOLBERTON="Betty" : Create a script that creates a new global variable of the name HOLBERTON and value Betty
