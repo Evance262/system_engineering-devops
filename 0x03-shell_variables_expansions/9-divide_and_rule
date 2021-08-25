@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "**//"
+echo $(($POWER/$DIVIDE))
