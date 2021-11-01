@@ -1,2 +1,2 @@
 #!/bin/bash
-echo '-i 10 -o 16'
+printf '%x\n' $DECIMAL
