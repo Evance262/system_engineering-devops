@@ -7,7 +7,7 @@ do
     if [[ $printing -eq 5 ]]
     then
         continue
-    elif [[ $printing -ge 10 ]]
+    elif [[ $printing -ge 12 ]]
     then
         break
     fi
