@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+printing=0
+until false
+do
+    ((printing++))
+    if [[ $printing -eq 5 ]]
+    then
+        continue
+    elif [[ $printing -ge 10 ]]
+    then
+        break
+    fi
+    echo "Best School"  
+done
