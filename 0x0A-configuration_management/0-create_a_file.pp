@@ -1,7 +1,9 @@
-# creates a file in /tmp with the following attributes
-file {'/tmp/school':
-mode    => '0744',
-owner   => 'www-data',
-group   => 'www-data',
-content => 'I love Puppet',
+# a Puppet Manifest that creates a file located in /tmp
+file { 'school':
+  ensure  => 'file',
+  path    => '/tmp/school',
+  owner   => 'www-data',
+  group   => 'www-data',
+  mode    => '0744',
+  content => 'I love Puppet'
 }
