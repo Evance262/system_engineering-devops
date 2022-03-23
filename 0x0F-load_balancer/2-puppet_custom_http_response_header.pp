@@ -1,12 +1,20 @@
-# install, configure and create a custom HTTP header on nginx
-package {'nginx':
-ensure => present,
-}
+#!/usr/bin/env bash
+# puppet config nginx
 
-service {'nginx':
-ensure  => running,
+exec { '/usr/bin/env apt-get -y update' : }
+package { 'nginx':
+  ensure => installed,
 }
-
-exec {'hostname=$(cat /etc/hostname); sudo sed -i "0,/http {/{s/http {/http {\n\tadd_header X-Served-By \"$hostname\"/}" /etc/nginx/nginx.conf; sudo service nginx restart':
-provider => 'shell',
+file { '/var/www/html/index.html' :
+  content => 'Hello World!',
+}
+-> file_line { 'header' :
+  ensure => present,
+  path   => '/etc/nginx/sites-available/default',
+  line   => "\tadd_header X-Served-By ${hostname};",
+  after  => 'server_name _;',
+}
+-> exec { 'Restaring Nginx':
+  provider => shell,
+  command  => 'sudo service nginx restart',
 }
