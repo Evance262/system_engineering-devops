@@ -1,7 +1,7 @@
 **what happens when you type "google.com" in your browser and press enter**
 
-A web browser communicates with a web server using what's called the Hyper
-Text Transfer Protocol (HTTP). When you search for some page on the web browser,
+A web browser communicates with a web server using what's called the Hyper Text
+Transfer Protocol (HTTP). When you search for some page on the web browser,
 the browser sends an HTTP Request from your computer to the server and give you
 the results either the exact same page you are looking for or some other related
 web pages. This article explains what happens when you type "google.com" in your
@@ -11,17 +11,17 @@ browser and press enter.
 
 First off, let's talk about HTTP requests. An HTTP request is the way internet 
 communications platforms like browsers ask for the information they need to load
-a website. The requests made over the internet carries witha series of encoded data
-tha carries different types of information.
+a website. The requests made over the internet carries with series of encoded data
+that carries different types of information.
 
 These requests include:
 
     A URL to identify the targeted server (in this case google's server) and resource
-    which conatains and HTML file, a datapoint on the server or any other too to run
+    which contains and HTML file, a datapoint on the server or any other tool to run
     (i.e static files).
 
     A method that defines the required actions, for instance geting the google page
-    index.html file. The methods/ verbs may include:
+    index.html file. The methods/verbs may include:
     
     GET: Gets the specified resource, for instance, the HTML file containing the
     information on google's landing page (Which is usually the Search button,
@@ -55,32 +55,34 @@ in 1998 to help maintain the security of the internet and allow it to be usable 
 anyone registers a domain on the internet, they go through a domain name registrar, who pays a
 small fee to ICANN to register the domain.
 
-The DNS allows us to call a webpage by typing a simple damain name, www.google.com instead
+*Domain Name System*
+
+The DNS allows us to call a webpage by typing a simple damain name, such as www.google.com instead
 of something like "107.26.523.274" once the user wants to access google site. Therefore,
 after hiting the "Enter button", the browser sends a request to the user's DNS resolver.
 The resolver does not know the IP address for www.google.com, so it will query one of the
-root DNS servers.The root servers know the locations of all the Top Level Domain (TLD), such
-as .com, they do not know the IP of www.google.com, so they return the location of the .com servers.
+root DNS servers.The root servers knows the locations of all the Top Level Domain (TLD), such
+as .com, so they return the location of the DNS servers.
 
 *Web and Application Server*
 
 A web server accepts and fulfills requests from clients for static content (i.e., HTML pages, files,
 images, and videos) from a website. Web servers handle HTTP requests and responses only.
 
-An application server exposes business logic to the clients, which generates dynamic content.
-It is a software framework that transforms data to provide the specialized functionality offered by
-a business, service, or application. Application servers enhance the interactive parts of a website
-that can appear differently depending on the context of the request.
+On the other hand application server exposes business logic to the clients, which generates dynamic
+content. It is a software framework that transforms data to provide the specialized functionality
+offered by a business, service, or application. Application servers enhance the interactive parts of
+a website that can appear differently depending on the context of the request.
 
-At the time our user here is sending a request at the google server, other users world wide are also
-sending different types of requests from their PCs or android browsers. Which increases the traffic in
-recieving the requested results. This is when now a load balancer comes in handy. Load balancing is the
-core networking solution to distribute traffice across multiple server in a server farm. Load balancers
-improve application availability and responsiveness and also prevent server overload.
+But at the time our user here is sending a request at the google server, other users world wide are also
+sending different types of requests from their PCs or smartphone browsers. Which increases the traffic in
+recieving the requested results. This is when now a load balancer comes in handy. 
 
 *Load Balancing*
 
-Load balancers detect the health of backend resources and do not send traffic to servers that are not
+Load balancing is the core networking solution to distribute traffice across multiple server in a server farm.
+Load balancers improve application availability and responsiveness and also prevent server overload.
+It detect the health of backend resources and do not send traffic to servers that are not
 able to fulfill requests. Regardless of whether it’s hardware or software, or what algorithm(s) it uses,
 a load balancer disburses traffic to different web servers in the resource pool to ensure that no single
 server becomes overworked and subsequently unreliable. It effectively minimizes server response time and
@@ -109,5 +111,5 @@ System (DBMS). The DBMS is the application clients use to access their digital i
 database server. When a database server client sends a specific command to the DBMS, the DBMS then executes
 the client's requested task.
 
-Finally the resolver will know the IP address for www.somedomain.com and will send the result to
+Finally the resolver will know the IP address for www.google.com and will send the result to
 the user's computer.
