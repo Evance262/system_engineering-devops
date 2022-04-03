@@ -1,0 +1,113 @@
+**what happens when you type "google.com" in your browser and press enter**
+
+A web browser communicates with a web server using what's called the Hyper
+Text Transfer Protocol (HTTP). When you search for some page on the web browser,
+the browser sends an HTTP Request from your computer to the server and give you
+the results either the exact same page you are looking for or some other related
+web pages. This article explains what happens when you type "google.com" in your
+browser and press enter.
+
+*HTTPS/SSL*
+
+First off, let's talk about HTTP requests. An HTTP request is the way internet 
+communications platforms like browsers ask for the information they need to load
+a website. The requests made over the internet carries witha series of encoded data
+tha carries different types of information.
+
+These requests include:
+
+    A URL to identify the targeted server (in this case google's server) and resource
+    which conatains and HTML file, a datapoint on the server or any other too to run
+    (i.e static files).
+
+    A method that defines the required actions, for instance geting the google page
+    index.html file. The methods/ verbs may include:
+    
+    GET: Gets the specified resource, for instance, the HTML file containing the
+    information on google's landing page (Which is usually the Search button,
+    and some news feed).
+
+    POST: Used to create a new resource (e.g. add a new article to google, add a new
+    contact to a database).
+    
+    HEAD: Get the metadata information about a specific resource without getting the
+    body like GET would. 
+    
+    PUT: Update an existing resource (or create a new one if it doesn't exist).
+    
+    DELETE: Delete the specified resource.
+
+For http requests to be successful, there is a need of the Domain Name System(DNS)
+query which demands for the information sent from a user to a server. In our case,
+entering google.com to a web browser to locate google's webpage. Unlike humans, computers
+recognize the location of the required webpage by an IP Adress. 
+
+*Internet Protocol (IP) address*
+
+An IP address is a string of numbers separated by periods. IP addresses are expressed as a
+set of four numbers — an example address might be 192.158.1.38. Each number in the set can
+range from 0 to 255. So, the full IP addressing range goes from 0.0.0.0 to 255.255.255.255.
+
+IP addresses are not random. They are mathematically produced and allocated by the Internet
+Assigned Numbers Authority (IANA), a division of the Internet Corporation for Assigned Names
+and Numbers (ICANN). ICANN is a non-profit organization that was established in the United States
+in 1998 to help maintain the security of the internet and allow it to be usable by all. Each time
+anyone registers a domain on the internet, they go through a domain name registrar, who pays a
+small fee to ICANN to register the domain.
+
+The DNS allows us to call a webpage by typing a simple damain name, www.google.com instead
+of something like "107.26.523.274" once the user wants to access google site. Therefore,
+after hiting the "Enter button", the browser sends a request to the user's DNS resolver.
+The resolver does not know the IP address for www.google.com, so it will query one of the
+root DNS servers.The root servers know the locations of all the Top Level Domain (TLD), such
+as .com, they do not know the IP of www.google.com, so they return the location of the .com servers.
+
+*Web and Application Server*
+
+A web server accepts and fulfills requests from clients for static content (i.e., HTML pages, files,
+images, and videos) from a website. Web servers handle HTTP requests and responses only.
+
+An application server exposes business logic to the clients, which generates dynamic content.
+It is a software framework that transforms data to provide the specialized functionality offered by
+a business, service, or application. Application servers enhance the interactive parts of a website
+that can appear differently depending on the context of the request.
+
+At the time our user here is sending a request at the google server, other users world wide are also
+sending different types of requests from their PCs or android browsers. Which increases the traffic in
+recieving the requested results. This is when now a load balancer comes in handy. Load balancing is the
+core networking solution to distribute traffice across multiple server in a server farm. Load balancers
+improve application availability and responsiveness and also prevent server overload.
+
+*Load Balancing*
+
+Load balancers detect the health of backend resources and do not send traffic to servers that are not
+able to fulfill requests. Regardless of whether it’s hardware or software, or what algorithm(s) it uses,
+a load balancer disburses traffic to different web servers in the resource pool to ensure that no single
+server becomes overworked and subsequently unreliable. It effectively minimizes server response time and
+maximizes throughput.
+
+*Web Application Firewall*
+
+After passing through the load balancer, the request now goes through the Web Application Firewall (WAF).
+A WAF or web application firewall helps protect web applications by filtering and monitoring HTTP traffic
+between the web application and the Internet. It typically protects web applications from attacks such as
+cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.
+A WAF is a protocol layer 7 defense (in the OSI model), and is not designed to defend against all types
+of attacks. This method of attack mitigation is usually part of a suite of tools which together create
+a holistic defense against a range of attack vectors.
+
+Once the query (or request) reaches the .com TLD servers, it will find the Authoritative DNS server of
+www.google.com and will reply to the resolver with that server. The resolver will send a query
+to the Authoritative DNS server of the domain and will resolve it. The Authoritative DNS server of
+the domain will check within its database and will find an entry for www.google.com,
+which has an IP address.
+
+*Databases*
+
+Database servers work by containing the database storage and memory space along with a Database Management
+System (DBMS). The DBMS is the application clients use to access their digital information through the
+database server. When a database server client sends a specific command to the DBMS, the DBMS then executes
+the client's requested task.
+
+Finally the resolver will know the IP address for www.somedomain.com and will send the result to
+the user's computer.
