@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Queries the Reddit API 
+Queries the Reddit API
 """
 import requests
+
 
 def number_of_subscribers(subreddit):
     '''Returns 0 if an invalid
