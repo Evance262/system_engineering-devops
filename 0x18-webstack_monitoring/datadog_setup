@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+
+# Use our easy one-step install. 
+DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=dbbec4cde78e751d05ce779229a1081e DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+
+# If the Agent is not already installed on your machine
+# and you don't want it to start automatically after the installation, just prepend 
+    # DD_INSTALL_ONLY=true  to the above script before running it.
+
+
+# Step-by-step Installation of Datadog agent
+
+sudo apt-get update
+sudo apt-get install apt-transport-https curl gnupg
+
+# Set up the Datadog deb repo on your system and create a Datadog archive keyring:
+
+sudo sh -c "echo 'deb [signed-by=/usr/share/keyrings/datadog-archive-keyring.gpg] https://apt.datadoghq.com/ stable 7' > /etc/apt/sources.list.d/datadog.list"
+sudo touch /usr/share/keyrings/datadog-archive-keyring.gpg
+sudo chmod a+r /usr/share/keyrings/datadog-archive-keyring.gpg
+
+curl https://keys.datadoghq.com/DATADOG_APT_KEY_CURRENT.public | sudo gpg --no-default-keyring --keyring /usr/share/keyrings/datadog-archive-keyring.gpg --import --batch
+curl https://keys.datadoghq.com/DATADOG_APT_KEY_382E94DE.public | sudo gpg --no-default-keyring --keyring /usr/share/keyrings/datadog-archive-keyring.gpg --import --batch
+curl https://keys.datadoghq.com/DATADOG_APT_KEY_F14F620E.public | sudo gpg --no-default-keyring --keyring /usr/share/keyrings/datadog-archive-keyring.gpg --import --batch
